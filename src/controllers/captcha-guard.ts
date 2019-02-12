@@ -323,7 +323,7 @@ export default class CaptchaGuard {
         cb.settings_choices = [
             {
                 name: "captcha_grey",
-                label: "Activate Captcha for Greys (if you tunr this to 'No' the bot wont act for any of the below either)",
+                label: "Activate Captcha for Greys (if you turn this to 'No' the bot won't act for any of the below either), but (if activated) tips will get a user into the whitelist and commands still work for import/export purposes.",
                 type: "choice",
                 choice1: "Yes",
                 choice2: "No",
@@ -421,7 +421,7 @@ export default class CaptchaGuard {
             },
             {
                 name: "import_list",
-                label: "Enter the white- and blacklist data here. Get your list export using the '/export' command and paste the exact message (without 'Notice: ') in here to use the saved lists. Users don't have to repeat the catpcha again and blacklistet users stay blacklisted.",
+                label: `Enter the white- and blacklist data here. Get your list export using the '${this.config.Prefix} ${this.config.CMDS.EXPORT}' command and paste the exact message (without 'Notice: ') in here to use the saved lists. Users don't have to repeat the catpcha again and blacklistet users stay blacklisted.`,
                 type: "str",
                 required: false,
                 defaultValue: "",

@@ -2,7 +2,7 @@ import CaptchaGuard from "./controllers/captcha-guard";
 
 const App = {
     Name: "Captcha Guard - Protecc your room!",
-    Version: "0.1.0",
+    Version: "0.1.1",
     Dev: "thmo_",
     FairyHelper: [],
     Prefix: "/guard ",
@@ -29,22 +29,29 @@ const App = {
 
 const guard = new CaptchaGuard(App);
 
-cb.onEnter((user) => {
-    guard.sendDevInfo(user);
-    guard.sendStatusInfo(user);
-    guard.checkAndAddToLists(user);
-});
+if (cb.settings.captcha_grey) {
+    cb.onEnter((user) => {
+        guard.sendDevInfo(user);
+        guard.sendStatusInfo(user);
+        guard.checkAndAddToLists(user);
+    });
 
-cb.onMessage((message) => {
-    guard.checkAnswer(message);
-    // If the user was not freshly added to the check (has already received information)..
-    const addedToCheck = guard.checkAndAddToLists(message);
-    // .. then don't send more messages (report = false);
-    guard.filterMessage(message, !addedToCheck);
+    cb.onMessage((message) => {
+        guard.checkAnswer(message);
+        // If the user was not freshly added to the check (has already received information)..
+        const addedToCheck = guard.checkAndAddToLists(message);
+        // .. then don't send more messages (report = false);
+        guard.filterMessage(message, !addedToCheck);
 
-    guard.handleCommands(message);
-    return message;
-});
+        guard.handleCommands(message);
+        return message;
+    });
+} else {
+    cb.onMessage((message) => {
+        guard.handleCommands(message);
+        return message;
+    });
+}
 
 cb.onTip((tip) => {
     guard.whitelistOnTip(tip);

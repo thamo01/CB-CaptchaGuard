@@ -1,6 +1,6 @@
 {
   "name": "cb-captcha-guard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Text based captcha for CB chat",
   "repository": {
     "type": "git",
