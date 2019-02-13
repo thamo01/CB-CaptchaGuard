@@ -1,0 +1,47 @@
+<h1 id="captchaguardproteccyourroom">Captcha Guard - Protecc your room!</h1>
+<p>This is a simple bot that allows the broadcaster to protect their room from automated spam messages.</p>
+<p>It allows you to choose what user categories (grey, blue, purple, etc.) to whitelist automatically (lets them chat without having to solve the captcha first).</p>
+<p>It also contains a blacklist manually added to by the mods or the broadcaster.</p>
+<p>The whitelist and the blacklist can be modified during with commands and the lists can be exported and imported at will. An exported list can also be used as initial data that always gets loaded with the settings. Using this, you can make it more comfortable for the users you already know, who don't fall into the automatically whitelisted user categories.</p>
+<h1>Important: Run this bot in slot #3 (first bot to run and get the messages) so the bot can get the captcha challenges all right, before other bots manipulate the messages!</h1>
+<p><strong>Source Code:</strong> <a href="https://github.com/thamo01/CB-CaptchaGuard">Github Repository (https://github.com/thamo01/CB-CaptchaGuard)</a>
+    Contributions are very welcome, licensed under GPLv3.</p>
+<h2>Usage:</h2>
+<p>Following commands are available (use without the ""):</p>
+<ul>
+    <li>
+        <strong>"/guard reload"</strong>
+        This reloads the the initial data from the settings.
+    </li>
+    <li>
+        <strong>"/guard export"</strong>
+        This exports a <strong>code</strong> you can use to import the data (on refresh of CB for example) and set as initial data in the settings. Copy the complete text after the <em>"Notice: "</em> from the first <strong><em>"{" </em></strong>to the last <strong><em>"}" </em></strong>and paste it into the setting or as a parameter to the "import" command.
+    </li>
+    <li>
+        <strong>"/guard import &lt;code&gt;"</strong>
+        This imports the data that gets exported using the above "export" command (add data without the "&lt;&gt;" this is to show as a paremeter and for reference).</p>
+    </li>
+    <li>
+        <strong>"/guard clear"</strong>
+        This deletes all data from all the lists and clears everything. All the people who don't fall into the categories of automatically whitelisted users will have to answer the captcha again.</p>
+    </li>
+    <li>
+        <strong>"/guard whitelist [-add | -remove] &lt;username&gt;"</strong>
+        Using "/guard whitelist -add thmo_<em>" you would add me (thmo_</em>) manually to the whitelist so I could chat without having to answer the captcha.
+
+        Using "/guard whitelist -remove thmo_<em>" you would remove me (thmo_</em>) from the whitelist so I could not chat anymore and would have to answer a captcha again.
+    </li>
+    <li>
+        <strong>"/guard blacklist [-add | -remove] &lt;username&gt;"</strong>
+        Using "/guard blacklist -add thmo_<em>" you would add me (thmo_</em>) manually to the blacklist so I couldn't ever chat. Blacklisted users won't receive an option to answer a captcha, they're blocked from communication in the global chat.
+
+        Using "/guard blacklist -remove thmo_<em>" you would remove me (thmo_</em>) from the blacklist so I would have to answer a captcha again to get added to the whitelist to chat.
+        <br />
+        <strong><em>Important</em></strong>:
+        <em>Users in the blacklist are always blocked. If you add a blacklisted user to the whitelist, the bot will first remove the user from the blacklist and then add the user to the whitelist. If you manually change the data you get from the export and have a user in the blacklist and in the whitelist, the blacklist will get the priority!</em>
+    </li>
+</ul>
+<h2>History:</h2>
+<ul>
+    <li>13.02.2019: Initial Release! Feedback is always welcome &lt;3</li>
+</ul>

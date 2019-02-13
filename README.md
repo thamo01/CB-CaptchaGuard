@@ -1,4 +1,5 @@
 # Captcha Guard - Protecc your room!
+
 This is a simple bot that allows the broadcaster to protect their room from automated spam messages.
 
 It allows you to choose what user categories (grey, blue, purple, etc.) to whitelist automatically (lets them chat without having to solve the captcha first).
@@ -34,3 +35,6 @@ Following commands are available (use without the ""):
     Using "/guard blacklist -remove thmo_" you would remove me (thmo_) from the blacklist so I would have to answer a captcha again to get added to the whitelist to chat.
     
     ***Important***: *Users in the blacklist are always blocked. If you add a blacklisted user to the whitelist, the bot will first remove the user from the blacklist and then add the user to the whitelist. If you manually change the data you get from the export and have a user in the blacklist and in the whitelist, the blacklist will get the priority!*
+
+    ## History
+    - 13.02.2019 - Initial Release. Would love to hear feedback!

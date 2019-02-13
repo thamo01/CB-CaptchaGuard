@@ -335,7 +335,7 @@ export default class CaptchaGuard {
                 type: "choice",
                 choice1: "Yes",
                 choice2: "No",
-                defaultValue: "Yes",
+                defaultValue: "No",
             },
             {
                 name: "captcha_darkblue",
